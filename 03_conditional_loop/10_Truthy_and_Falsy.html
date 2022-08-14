@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>10_Truthy_and_Falsy</title>
+    
+</head>
+<body>
+    <h1>
+     어떤 값을 boolean 타입으로 변환하는 !!
+    </h1>
+
+    <script>
+
+         //flasy한 값
+
+         console.log(!!' ');//''(false), ' '(true)
+         console.log(!!0);//false
+         console.log(!!null);//false
+         console.log(!!undefined);//false
+         console.log(!!NaN);//false
+
+         //truthy한 값
+
+         console.log(!'');
+         console.log(!0);
+         console.log(!null);
+         console.log(!undefined);
+         console.log(!NaN);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20_단순_if(걸음수)</title>
+    
+</head>
+<body>
+    <h1>
+     단순 if문
+    </h1>
+     
+    <script>
+
+    /*
+        문제) 걸음수가 20000보 이상이면 "오늘은 2만보 이상 걸으셨네요" 라고 출력되고, 걸음수가 10000보 이상, 
+        20000보 미만이면 "오늘은 1만보 이상 걸으셨네요" 라고 출력되도록 코드를 작성하세요
+    */ 
+     let num=parseInt(prompt("오늘은 몇걸음을 걸으셨나요?,777"))
+     
+
+       if(num>=20000){
+        document.write('오늘은 2만보이상 걸으셨네요');
+       }
+       else if(num>=10000&&num<20000){
+           document.write('오늘은 1만보이상 걸으셨네요');
+       }
+       else {
+           document.write('하루 만보이상 걷기는 건강에 좋습니다.')
+       }
+
+
+
+    </script>
+</body>
+</html>

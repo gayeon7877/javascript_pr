@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>70_Null병합연산자</title>
+    
+</head>
+<body>
+    <h1>
+     
+    </h1>
+
+    <script>
+
+          /*자바스크립트의 기본데이터 타입-6가지
+            number
+            string        
+            boolean
+            null-'비어있다 or 지금 현재 값을 알수없다'라는 의미의 아주 특별한 값
+            undefined-변수를 선언만 하면 값도 type도 모두 undefined 이다.
+            symbol
+          */
+
+          /*
+          
+             왼쪽 피연산자의 값이 null또는 undefined 이면
+             오른쪽 피연산자를 반환(return)하고,
+          
+          */
+          //인터넷으로 데이터를 받아와서 저장
+          let dnldData=null;//다운로드 받은 데이터
+          dnldData='아기공룡둘리와 친구들'
+
+          let result=dnldData?? '다운로드 받은 데이터가 없습니다.';
+          /*
+             이 부분에 인터넷으로 데이터를 받아와
+             result 변수에 할당하는 코드 있음
+            
+          */
+          console.log(`result=${result}`);
+
+          //0은 nu.//
+          const lucky=0??42;
+          console.log(`Lucky=${lucky}`)
+    </script>
+</body>
+</html>

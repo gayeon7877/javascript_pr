@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>60_삼항연산자와 조건부렌더링</title>
+    
+</head>
+<body>
+    <h1>
+        삼항연산자와 조건부렌더링
+    </h1>
+
+    <script>
+        /*
+          if(조건식){
+            console.log('참');
+          }
+          else{                         -->약식으로 쓸 수 있음
+            console.log('거짓');
+          }
+
+          삼항연산자
+          (조건식)?console.log('참'):console.log('거짓');
+        */
+       if(true){
+            console.log('케익')
+       }
+       else{
+            console.log('식빵')
+       }
+
+        //위코드를 삼항연산자로 변환
+        (true)?console.log('케익'):console.log('식빵');
+
+        const age=parseInt(prompt('나이를 입력하세요(5~12)'));
+
+        const age=7;
+
+
+        //변수에 어떤값을 대입할때 삼항연산자 사용 사례
+        //student 변수에 age값의 조건에 따라 다른 값을 저장(유치원생, 초등학생)
+
+        const student=(age>7)?'초등학생':'유치원생';
+        console.log(`student=${student}`);
+
+        console.log('---------------');
+        //조건부 렌더링 && ||
+        //&&: 왼쪽의 조건이 모두 참이면 오른쪽을 반드시 검사해야하는 특성을 이용
+        //||: 왼쪽의 조건이 거짓이면 오른쪽을 반드시 검사해야하는 특성을 이용
+        
+        (age>7)&&console.log('다 컸네~!');
+        (age>7)||console.log('좀 더 커야겠네~!');
+        
+    </script>
+</body>
+</html>
