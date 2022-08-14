@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>50_동등연산자_일치연산자_비교연산자</title>
+    
+</head>
+<body>
+    <h1>
+     ==,===
+    </h1>
+
+    <script>
+
+     //동등,비교,일치연산자의 결과는 true,false중 하나
+
+     const score1=100;
+     const score2='100';
+
+     console.log(`typeof score1:${typeof score1}`);//number
+     console.log(`typeof score1:${typeof score2}`);//string
+     
+
+     console.log(`score1==score2 결과는 ${score1==score2}`) //동등 연산자 ==로 값을 비교할 경우 값만 비교하므로 true
+     //조금더 엄격한 검사방법인 일치연산자 사용을 권장
+     console.log(`score1===score2 결과는 ${score1===score2}`)//일치 연산자 ===로 값을 비교할 경우 type까지 비교하므로 false
+
+     let dulyAge=7
+     let micol=7
+
+     console.log(dulyAge>micol)//false
+     console.log(dulyAge>=micol)//true
+     console.log(dulyAge<micol)//flase
+     console.log(dulyAge<=micol)//true
+
+     console.log(dulyAge==micol);//true
+     console.log(dulyAge!=micol);//false 동등연산자의 부정
+
+     console.log(dulyAge===micol)//true 일치연산자의 부정
+     
+
+    </script>
+</body>
+</html>

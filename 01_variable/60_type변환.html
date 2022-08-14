@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>60_type변환</title>
+    
+</head>
+<body>
+    <h1>
+     
+    </h1>
+
+    <script>
+
+     //string을 number 타입으로 변환
+     //const score='100'
+     const score=Number('100세');//한글이 껴있으면 not number
+     console.log(`score 변수의 타입은 ${typeof score}-${score}`);
+
+     //string을 number 타입으로 변환2
+ 
+     const age=parseInt('40세');//다른 것이 껴있으면 number까지만 숫자 취급
+     console.log(`age의 타입은 ${typeof age}-${age}`)
+
+
+     //string을 number 타입으로 변환3
+     const weight=parseFloat('75.9');
+     console.log(`weight 변수의 타입은 ${typeof weight}-${weight}`)
+
+
+    </script>
+</body>
+</html>
