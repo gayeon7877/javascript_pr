@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20_constructor()를_가진_class</title>
+</head>
+<body>
+    <h1>20_constructor()를_가진_class</h1>
+
+    <script>
+        //생성자를 가진 class 설계
+        class Robot{
+            name;
+            usage;
+            weight;
+
+            //생성자함수는 new 키워드로 인스턴스 생성시 자동 호출됨
+            constructor(name, usage, weight){
+                this.name=name;
+                this.usage=usage;
+                this.weight=weight;
+            }
+
+            info(){
+                console.log(`${this.name}의 무게는 ${this.weight}톤이며, ${this.usage}가 목적입니다.`)
+            }
+        }
+
+        const taekwonV=new Robot('태권브이','지구평화수호',1500);
+        taekwonV.info();
+        console.log(taekwonV);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            20_전역변수_지역변수_유효범위(scope)의 개념
+        </title>
+    </head>
+    <body>
+        <h1>
+            변수 Scope
+        </h1>
+
+        <script>
+            let username='홍길동';//funFn()입장에서 보면 전역변수에 해당
+            function runFn(){
+                const username='하니';
+
+                /*
+                    중괄호 안에서 username 변수를 먼저 찾고, 없으면 중괄호 밖(전역)에 있는지 찾는다.
+
+                */
+                console.log(username+'달려~!');
+
+                //함수의 중괄호 안에서 선언한 지역변수에 해당 
+                let address='서울시 쌍문동';
+            }
+
+            //함수중괄호 안에서 선언한 지역변수는 밖에서 인식하지 못하기때문에 에러발생
+
+            runFn();
+
+        </script>
+    </body>
+</html>

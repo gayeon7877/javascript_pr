@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <h1>
+            자바스크립트에서 날짜, 시간정보 구하기
+        </h1>
+
+        <script>
+            //현재 날짜와 시간정보가 now 변수에 저장
+            const now=new Date();
+
+            //년월일
+            const year=now.getFullYear();
+            const month=now.getMonth(); //0~11
+            const date=now.getDate();
+
+            document.write(year+'년 <br>');
+            document.write((month+1)+'월 <br>');
+            document.write(date+'일 <br>');
+
+            //요일
+            const day=now.getDay(); //0~6(일~토)
+            let dayname=null;
+
+            switch(day){
+                case 0: dayname='일요일'; break;
+                case 1: dayname='월요일'; break;
+                case 2: dayname='화요일'; break;
+                case 3: dayname='수요일'; break;
+                case 4: dayname='목요일'; break;
+                case 5: dayname='금요일'; break;
+                case 6: dayname='토요일'; break;
+            }
+
+            document.write(dayname+'<br>');
+
+            //시분초
+            const hours=now.getHours();//0~23
+            const minutes=now.getMinutes();
+            const seconds=now.getSeconds();
+
+            document.write(hours+'시<br>');
+            document.write(minutes+'분<br>');
+            document.write(seconds+'초<br>');
+
+        </script>
+    </body>
+</html>

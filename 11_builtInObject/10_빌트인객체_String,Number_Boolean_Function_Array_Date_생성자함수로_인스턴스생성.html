@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본 생성자함수로 인스턴스 생성</title>
+</head>
+<body>
+    <h1>String, Number, Boolean, Function, Array, Date 객체</h1>
+
+    <section></section>
+
+    <script>
+        const $section = document.querySelector('section');
+
+        //Number 생성자함수를 이용해서 Number 객체 생성
+        const age = new Number(17);
+        document.write('<br>age = '+age);
+        document.write('<br>typof age = '+typeof age);
+
+        
+        //String 생성자함수를 이용해서 String 객체 생성
+        const name = new String('duly');
+        document.write('<br>name = '+name);
+        document.write('<br>typof name = '+typeof name);
+
+
+        //Boolean 생성자함수를 이용해서 Boolean 객체 생성
+        const isRobot = new Boolean(false);
+        document.write('<br>isRobot = '+isRobot);
+        document.write('<br>typof isRobot = '+typeof isRobot);
+
+
+        //Object 생성자함수를 이용해서 Object 객체 생성
+        const duly = new Object({name:'둘리'});
+        document.write('<br>duly.name = '+duly.name);
+        document.write('<br>typof duly = '+typeof duly);
+
+
+        //Array 생성자함수를 이용해서 Array 객체 생성
+        const arrNum = new Array(3,5,7);
+        document.write('<br>arrNum = '+arrNum);
+        document.write('<br>typof arrNum = '+typeof arrNum);
+    
+    
+        //Function 생성자함수를 이용해서 Function 객체 생성
+        const sumFn = new Function('x,y','return x+y;');
+        document.write('<br>sumFn(3,4) = '+sumFn(3,4));
+        document.write('<br>typof sumFn = '+typeof sumFn);
+
+        //Date 생성자함수를 이용해서 Date 객체 생성
+        const today=new Date();
+        document.write('<br>today='+today);
+        document.write('<br>typeof today='+typeof today);
+
+    </script>
+</body>
+</html>

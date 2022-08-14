@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            50_setInterval()을 이용한 시계만들기
+       </title>
+       <style>
+            h1{
+                width:260px;
+                height:40px;
+                margin: 0 auto;
+                padding: 20px 30px;
+                text-align: center;
+                border: 5px dotted pink;
+            }
+
+            button{
+                display: block;
+                margin: 20px auto;
+                padding: 10px 30px; 
+            }
+       </style>
+    </head>
+    <body>
+        <h1>
+            11:46:30
+        </h1>
+        <script>
+            //const intervalKey=window.setInterval(콜백함수,시간);
+            //window.clearInterval(intervalKey);
+
+            const $h1=document.querySelector('h1');
+            const $button=document.querySelector('button');
+
+
+            const intervalKey=window.setInterval(function(){
+                const now=new Date();
+
+                
+                //시분초 추출
+                const hours = now.getHours();//0~23
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
+
+                $h1.textContent=`${hours}:${minutes}:${seconds}`
+            },1000);
+
+            $button.addEventListener('click',function(){
+                window.clearInterval(intervalKey);
+            });
+        </script>
+    </body>
+</html>

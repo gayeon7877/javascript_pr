@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            30_정적프로퍼티와_정적메소드
+        </title>
+    </head>
+    <body>
+        <h1>
+            static 키워드를 이요한 정적변수, 정적메소드
+        </h1>
+        <pre>
+
+            1.객체를 아무리 많이 만들더라도 static 변수는 오직 하나의 메모리만 생성
+            2.모든 객체가 공유하기 때문에 메모리를 효율적으로 사용
+            3.인스턴스명이나 this로 호출하지 않고, 클래스명로 사용한다
+
+        </pre>
+        <script>
+            class HelloCount{
+                /**
+                 * *클래스 설계시 constructor()를 생략하면 컴파일러가
+                 * 자동으로 아래와 같은 빈 constructor()를 넣어준다
+                 * 따라서 아래의 빈 constructor()는 여기에선 생략가능하다.
+                */
+               constructor(){}
+
+               static sCount=0;//공용변수의 개념
+               #nCount=0;//private
+                
+               static goUp(){
+                console.log('static 정적메소드는 goUp() 호출 성공~!');
+               }
+
+               sayHello(){
+                HelloCount.sCount++;
+                this.#nCount++;
+
+                console.log(`static변수를 이용하여 ${sCount}번째 인사를 합니다.`)
+                console.log(`${this.#nCount}번째 인사를 합니다.`)
+               }
+            }
+
+            const hello1=new HelloCount();
+            const hello2=new HelloCount();
+
+            HelloCount.goUp();//static 정적메소드 호출
+
+            hello1.sayHello()
+            hello1.sayHello()
+
+            console.log('----------------------')
+
+            hello2.sayHello()
+            hello2.sayHello()
+            hello2.sayHello()
+            </script>
+    </body>
+</html>

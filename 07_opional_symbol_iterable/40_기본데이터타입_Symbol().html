@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>40_기본데이터타입_Symbol()</title>
+    
+</head>
+<body>
+    <h1>
+        40_기본데이터타입_Symbol()</h1>
+
+    <script>
+
+        //심볼변수 생성
+        const sym1=Symbol();//sym1에는 우주에서 유일한 고유값이 저장된다.
+        const sym2=Symbol();
+        const sym3=Symbol('javascript');
+        const sym4=Symbol('javasvript');
+
+        friends[sym1]='또치';
+        friends[sym2]='도우너';
+        friends[sym3]='자바스크립트';
+
+        console.log(friends);
+
+        console.log('----------------------------');
+
+        //Symbol for()를 이용해서 심볼 생성->내부적으로 심볼리스트에 저장관리
+        //만약 심볼리스트에 'samsung'이라는 key를 갖는 심볼이 없으면 새로운 심볼 생성
+        const s1=Symbol.for('samsung');
+
+        //만약 심볼리스트에 'samsung' key를 갖는 심볼이 있으면 해당 심볼값을 반환함
+        const s2=Symbol.for('samsung');
+
+        console.log(s1===s2);//true
+        
+    </script>
+</body>
+</html>

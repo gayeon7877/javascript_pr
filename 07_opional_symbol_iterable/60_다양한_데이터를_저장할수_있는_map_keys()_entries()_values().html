@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>60_다양한_데이터를_저장할수_있는_map_keys()_entries()_values()</title>
+    
+</head>
+<body>
+    <h1>
+        Map 객체
+    </h1>
+
+    <script>
+        /**
+         * 지금까지 데이터를 저장하는 방법-일반변수, 배열변수, 객체변수
+         * 
+         * 1.현실세계를 반영하기엔 턱없이 부족해서 Map,Set 등장
+         * 2.Map은 key가 있는 데이터를 저장한다는 점에서 object와 유사
+         * 3.다만 Map은 여러가지 size 속성으로 항목의 수를 알 수있게 한다는 점에서 차이가 있다.
+        */
+
+        //Map 자료구조 생성
+        const myMap=new Map();
+
+        //데이터 저장
+        myMap.set('name','둘리'); //문자형 key
+        myMap.set(100,'아기공룡'); //숫자형 key
+        myMap.set(true,'빙하타고 왔죠~!'); //불린형 key
+
+        //데이터인출
+        myMap.get('name');
+        console.log(myMap.get('name'));
+        console.log(myMap.get(100));
+        console.log(myMap.get(true));
+
+        console.log('-----------------------');
+        //Map은 이터러블 규약을 따르므로 for~of 반복문으로 출력 가능
+        for(let value of myMap){
+            console.log(value);
+        }
+        console.log('-----------------------');
+
+        let iterator=myMap.keys();
+        for(let i=0;i<myMap.size;i++){
+            console.log(iterator.next());
+        }
+
+        console.log('-----------------------');
+
+        //value 전체를 항목으로하는 iterator 객체를 이용해서 출력
+        iterator=myMap.values();
+        for(let i=0;i<myMap.size;i++){
+            console.log(iterator.next());
+        }
+        //Map 전체를 항목으로하는 iterator 객체를 이용해서 출력
+        iterator=myMap.entries();
+        for(let i=0;i<myMap.size;i++){
+            console.log(iterator.next());
+        }
+
+    </script>
+</body>
+</html>

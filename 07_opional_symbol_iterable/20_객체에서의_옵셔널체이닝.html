@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20_객체에서의_옵셔널체이닝</title>
+</head>
+<body>
+    <h1>20_객체에서의_옵셔널체이닝</h1>
+
+    <script>
+
+        //객체에서의 옵셔널 체이닝
+        const user={
+            name:'둘리',    //user.name
+            login:{
+                id:'둘리',  //user.login.id
+                pwd:1234    //user.login.pwd
+            }
+
+        };
+        //1)user 객체의 login 속성을 주석처리하면 undefined
+        console.log(user.login); 
+
+        //2)user 객체의 login 속성을 주석처리하면 에러발생-실행멈춤
+        console.log(user.login.id);
+
+        //3)문제-user.login이 있으면 .id 속성을 출력해주세요
+        
+        //전통적인 방식-만약에 user.login의 속성이 있으면 출력 아니면 출력x라는 조건을 만들어줌
+        if(user.login){
+            console.log(`예전방식으로 출력-${user.login.id}`);
+        }
+
+        //최근 옵셔널 체이닝 방식
+        console.log(`최신방식으로 출력-${user.login?.id}`);
+        /*
+
+            점을 두번이상 찍었을 때 물음표 왼쪽에 있는 값이 null, undefinded 이면 
+            error가 발생함
+            왜냐하면 undefined.id, null.id와 같게 되기 때문이다.
+            
+            옵셔널 체이닝-에러발생으로 인한 프로그램 멈춤을 예방하는 코드
+
+            점을 두번이상 찍었을 때 물음표 왼쪽에 있는 값이 null, undefinded 이면 
+            오른쪽의 .id를 더이상 실행하지 않고 undefined만 남겨줌 
+            =>그래서 결과적으로 에러발생으로 인해 실행이 멈추지 않음
+
+            복잡하게 중첩된 객체 데이터에서 특정 자료를 추출할때 
+            에러발생 없이 안전하게 데이터를 추출할 수 있다.
+        
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>10_옵셔널 파라미터</title>
+</head>
+<body>
+    <h1>옵셔널 파라미터</h1>
+
+    <script>
+
+        //함수에서 옵셔널 파라미터-매개변수에 기본값을 할당
+      const infoFn=function(name,age=5,address='서울시 서초구'){
+        console.log(`${name},${age},${address}`);
+
+        //예전에는 삼항연산자로 처리
+        console.log(address?address:'주소없음');
+      };
+
+      infoFn('둘리',7,'쌍문동');
+      infoFn('둘리',7,);
+      infoFn('둘리');
+      infoFn();
+    </script>
+</body>
+</html>

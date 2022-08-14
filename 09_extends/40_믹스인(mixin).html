@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>40_믹스인(mixin)</title>
+    
+</head>
+<body>
+    <h1>
+     이미 구현된 메소드를 가져다 class에서 사용하는 기법
+    </h1>
+
+    <script>
+       
+        class User{
+            name;
+
+            constructor(name){
+                this.name=name;
+            }
+        }
+        //Mixin 기법으로 메소드 복사
+        Object.assign(User.prototype,sayMixin);
+        
+        const duly=new User('둘리');
+        console.log(`duly.name=${duly.name}`);
+
+        //mixin 기법으로 연결한 메소드 호출
+        duly.sayHi();
+        duly.sayBye();
+
+    </script>
+</body>
+</html>

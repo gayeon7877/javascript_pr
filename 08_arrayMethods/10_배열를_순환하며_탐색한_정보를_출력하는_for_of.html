@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>10_배열를_순환하며_탐색한_정보를_출력하는_for_of</title>
+    
+</head>
+<body>
+    <h1>어드밴스 for~of문 반복문</h1>
+
+    <script>
+        //형태: for(let item of 배열명){~}
+
+        const character=['둘리','또치','도우너'];
+        let cList='';//'둘리 또치 도우너';
+
+        //1.전통적인 for문
+        for(let i=0;i<character.length;i++){
+            cList+=character[i]+' ';
+        }
+
+        console.log(`cList=${cList}`);
+
+        //2.for~of 반복문으로 출력
+        for(let item of character){
+            console.log(item)
+        }
+        //3.한줄로 출력
+        let str=' ';
+        for(let time of character){
+            str+=iem;
+        }
+    </script>
+</body>
+</html>

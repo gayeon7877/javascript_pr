@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>10_객체변수_설계도_class</title>
+</head>
+<body>
+    <h1>10_객체변수_설계도_class</h1>
+
+    <script>
+     //같은 패턴의 객체변수를 만들때 사용하는 class
+
+
+     //class는 객체변수
+     //형식:class 클래스명{};
+       class Robot{
+        name;
+        usage;
+        weight;
+       }
+
+       //생성할 때 아무값도 전달하지 않으므로 name,usage,weight에는 undefined가 할당됨
+       const taekwonV=new Robot();
+
+       taekwonV.name='태권브이';
+       taekwonV.usage='전투';
+       taekwonV.weight=1000;
+
+       console.log(taekwonV);
+
+    </script>
+</body>
+</html>
