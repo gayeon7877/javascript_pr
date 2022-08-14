@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+
+        </title>
+        
+    </head>
+    <body>
+        <h1>
+
+        </h1>
+        <script>
+                    /*
+            예약을 거는 방식으로 콘창에 아래와 같이 출력하고 싶다.
+
+            2022-08-07T03:22:25.479Z
+            2022-08-07T03:22:26.479Z
+            2022-08-07T03:22:27.479Z
+            
+            const now = new Date();
+            document.write(now.toISOString());
+        */
+
+            //첫번째 예약
+            window.setTimeout(function(){
+                const now = new Date();
+                 document.write(now.toISOString()+'<br>');
+                 //두번째 예약
+                 window.setTimeout(function(){
+                     const now = new Date();
+                      document.write(now.toISOString()+'<br>');
+                      //세번째 예약
+                      window.setTimeout(function(){
+                          const now = new Date();
+                           document.write(now.toISOString()+'<br>');
+                      },1000)
+                 },1000)
+            },1000)
+
+
+
+
+       
+
+        </script>
+    </body>
+</html>

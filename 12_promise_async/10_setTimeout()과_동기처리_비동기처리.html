@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            10_setTimeout()과_동기처리_비동기처리
+        </title>
+    </head>
+    <body>
+        <h1>
+            동기처리와 비동기처리
+        </h1>
+        <script>
+            /*
+            동기방식- 화장실 사용과 비슷
+                =>하나의 작업 끝날때까지 다른 작업들은 대기(순차적 실행)
+
+            비동기방식-롯데리아에서 햄버거 주문과 비슷
+                =>작업발생시 예약을 거는 방식인데, 예약이 여러개일 경우 어떤 예약이 먼저 처리될지는 알 수 없다.(비순차적 실행)
+            */
+
+            //'3초후에 이 콜백을 실행시켜줘'라고 예약을 거는 코드
+            //비동기=> 코드가 작성된 시간과 상관없이 예약된 시간에 출력
+            window.setTimeout(function(){
+                console.log('수업시작~!');
+            },3000);
+
+            //동기처리코드
+            console.log(1);
+            console.log(2);
+            console.log(3);
+            console.log(4);
+            console.log(5);
+
+            //비동기처리코드
+            window.setTimeout(function(){
+                console.log('수업종료~!')
+            })
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>50_비동기_실행순서와_코드의_가독성까지_해결한_async_await</title>
+    
+</head>
+<body>
+    <h1>
+     
+    </h1>
+
+    <script>
+
+        function workFn(){
+            return '3초후 서버에서 데이터 수신완료~!'
+        }
+
+        //수신한 데이터를 출력하는 함수
+        function printFn(){
+            const result=workFn();
+            console.log(result+'하여 화면에 출력합니다.')
+        }
+    </script>
+</body>
+</html>

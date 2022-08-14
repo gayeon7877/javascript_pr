@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>10_인라인방식의_이벤트처리</title>
+    <style>
+        body{text-align:center;}
+        h1{cursor: pointer;}
+        img{
+            border: 1px solid #000;
+            border-radius: 10px;;
+        }
+        button{
+            margin-top: 10px;
+            padding: 20px 15px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>
+        10_인라인방식의_이벤트처리
+    </h1>
+
+    <div id="wrap">
+        <h1 onclick="msgFn('복권 1등 당첨~!');">클릭하면 복권당첨~!</h1>
+
+        <p>
+            <img onclick="msgFn('독도는 우리땅~!')" src="./../images/kakaofriends.png"  alt="#">
+         
+
+            <br>
+
+            <button onclick="alert('열심히 공부합시다~!')">
+                클릭하면 올해 취업성공~!
+            </button>
+        </p>
+    </div>
+    
+    <script>
+        const msgFn=function(msg){
+            alert(msg);
+        };
+
+        msgFn();
+    </script>
+</body>
+</html>

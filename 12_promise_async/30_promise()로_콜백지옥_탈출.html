@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>30_Promise()로_콜백지옥_탈출</title>
+</head>
+<body>
+    <h1>순차적인 비동기처리에 초점을 맞춘 Promise()</h1>
+
+    <!-- 
+        Promise 작성법 - 프라미스도 그다지 가독성이 좋지 않다.
+
+        1. resolve()를 포함한 Promise 객체를 생성하여 리턴하고,
+        2. then()에서 resolve()로 보낸 결과를 받는다.
+        3. 프라미스 문법에서는 두개의 콜백이 필요한데
+           첫번째는 Promise 객체 생성시 넘기는 콜백 (resolve,reject)=>{} 이고,
+           두번째는 then()에서 받는 콜백 (result)=>{} 이다.
+
+        4. resolve에는 예약성공시 호출하는 함수의 주소값이 할당
+        5. reject에는 에러가 발생했을 경우 호출하는 함수의 주소값이 할당
+     -->
+
+    <script>
+        function workFn(sec){
+
+            //비동기작업을 순차적으로 실행시키기 위해 등장 -> 콜백지옥 탈출
+            const myPromise = new Promise(function(resolve,reject){
+
+                //우리가 걸 예약코드를 여기에 작성
+                setTimeout(function(){
+                    resolve(new Date().toLocaleString())
+                },sec*1000)
+
+            });
+
+            return myPromise;
+
+        }
+
+        workFn(1)
+            .then(function(result){
+                console.log('첫번째 작업을 실행한 시간 :', result);
+                return workFn(1);
+
+          }).then(function(result){
+                console.log('두번째 작업을 실행한 시간 :', result);
+                return workFn(1);
+
+          }).then(function(result){
+                console.log('세번째 작업을 실행한 시간 :', result);
+                return workFn(1);
+          });
+    </script>
+</body>
+</html>

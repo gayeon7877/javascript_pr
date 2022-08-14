@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>80_자바스크립트로_CSS_효과주기</title>
+</head>
+<body>
+    <h1>자바스크립트로_CSS_효과주기</h1>
+
+    <div class="ex1">
+      <h2 id="cont" class="tit">자바스크립트 프로그래밍</h2>
+      <button>클릭~!</button>
+    </div>
+
+    <script>
+        const $btnEx1 = document.querySelector('.ex1>button');
+        const $h2 = $btnEx1.previousElementSibling;
+
+        $btnEx1.addEventListener('click', function(){
+            $h2.setAttribute('style','color:red;');
+            $h2.removeAttribute('id');
+            $h2.setAttribute('class','javascript');
+        });
+    </script>
+  
+    <div class="ex2">
+      <h2>JavaScript Programming</h2>
+      <button>클릭~!</button>
+    </div>
+
+    <script>
+        /*
+        문제1. 첫번째 버튼을 눌렀을 때 h2태그의 속성제어
+            1) style='color:red' 속성추가
+            2) id='cont' 속성 제거
+            3) class='tit'를 class='javascript'로 변경
+            
+        문제2. 두번째 버튼을 눌렀을 때 h2구문의 CSS 효과를 적용
+            1) 글자색을 빨간색으로 ....
+            2) 글자에 밑줄을 ....
+            3) 배경색을 노란색으로 ....        
+        */
+
+        const $btnEx2 = document.querySelector('.ex2>button');
+        const $H2 = $btnEx2.previousElementSibling;
+
+        $btnEx2.addEventListener('click', function(){
+            $H2.style.color = 'red';
+            $H2.style.textDecoration = 'underline';
+            $H2.style.backgroundColor = 'yellow';
+        });
+    </script>
+</body>
+</html>

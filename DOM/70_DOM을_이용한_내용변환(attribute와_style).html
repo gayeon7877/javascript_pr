@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>70_DOM을_이용한_내용변환(attribute와_style)</title>
+    <style>
+        section{text-align: center;}
+        .box{
+            margin:0 auto 30px;
+            padding:20px 0;
+            text-align: center;
+            background-color: pink;
+        }
+        button{padding: 10px 20px;}    
+        .shadow{box-shadow: 1px 1px 5px black;}
+      </style>    
+</head>
+<body>
+    <h1>태그와 CSS의 속성제어</h1>
+
+    <section>
+      <p id="cont" class="box shadow" style="color:blue;">자바스크립트를 이용한 내용변환</p>
+  
+      <button class="attr">Attribute 변환</button>
+      <button class="prop">Property 변환</button>
+    </section>
+
+    <script>
+
+        const $btnAttr=document.querySelector('.attr');
+        const $btnProp=document.querySelector('.prop');
+
+        const $p=document.getElementById('cont');
+
+        $btnAttr.addEventListener('click',function(){
+            //태그의 속성추가-$p.setAttribute(속성명, 속성값);
+            $p.setAttribute('style','background-color:yellow;');
+
+            //태그의 속성제거-$p.removeAttribute(속성명)
+            $p.removeAttribute('class')
+           
+            $p.setAttribute('class','box')
+            //태그의 속성값 가져오기-$p.getAttribute(속성명)
+            alert($p.getAttribute('id'));
+
+            //특정 속성을 가지고 있는지 확인
+            if($p.hasAttribute('id')){
+                alert('p 태그는 id를 가지고 있습니다.')
+            }
+
+        })
+
+        $btnProp.addEventListener('click',function(){
+            $p.style.color='black';
+            $p.style.fontWeight='800';
+            $p.style.backgroundColor='yellow';
+
+        })
+    </script>
+</body>
+</html>
